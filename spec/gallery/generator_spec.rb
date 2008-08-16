@@ -47,12 +47,12 @@ describe Gallery::Generator do
   describe "#recipe" do
     it "returns a recipe based on the target directory" do
       generator.recipe.should == {
+        :current_job => {
+          :date => "07/31/2008",
+          :number => "2392",
+          :href => "2392_Silverlign_2008_07_31"
+        },
         :archives => [
-          {
-            :date => "07/31/2008",
-            :number => "2392",
-            :href => "2392_Silverlign_2008_07_31"
-          },
           {
             :date => "06/15/2008",
             :number => "2391",

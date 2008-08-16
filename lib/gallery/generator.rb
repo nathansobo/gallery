@@ -40,7 +40,10 @@ module Gallery
         job[:date] = format_date(job[:date])
       end
       
+      current_job = sorted_jobs.shift
+      
       {
+        :current_job => current_job,
         :archives => sorted_jobs
       }
     end

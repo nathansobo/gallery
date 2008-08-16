@@ -7,11 +7,10 @@ module Gallery
     end
     
     def generate(recipe)
-      dir = File.dirname(__FILE__)
-      File.open("#{dir}/client_index.erb") do |file|
-        template = ERB.new(file.read)
-        template.result
-      end
+      dir = File.dirname(__FILE__)      
+      template = ERB.new(File.read("#{dir}/client_index.erb"))
+      template.result(binding)
+      
     end
   end
 end

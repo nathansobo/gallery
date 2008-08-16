@@ -1,3 +1,6 @@
+<%= recipe.inspect %>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,7 +32,7 @@
             </tr>
             <tr>
               <td height="20">
-                <a href="2392_SilverlignGallery/index.html" target="_blank" class="ListLeft">2392 Silverlign 7-31-08</a>
+                <a href="<%= recipe[:current_job][:href]  %>" target="_blank" class="ListLeft">Job #<%= recipe[:current_job][:number] %> <%= recipe[:current_job][:date] %></a>
               </td>
             </tr>
             <tr>
@@ -41,47 +44,14 @@
               <td height="25" valign="top">
                 <span class ="Headline">Archive:</span>
               </td>
-            </tr>
+            </tr>            
+            <% recipe[:archives].each do |job| %>
             <tr>
               <td height="20">
-                <a href="2360_Sum08/index.html" target="_blank" class="ListLeft">2360 Silverlign 3-13</a>
+                <a href="<%= job[:href] %>" target="_blank" class="ListLeft">Job #<%= job[:number] %> <%= job[:date] %></a>
               </td>
             </tr>
-            <tr>
-              <td height="20">
-                <a href="2336_Silverlign_12_14_07/index.html" target="_blank" class="ListLeft">2336 Silverlign 12-24-07</a>
-              </td>
-            </tr>
-            <tr>
-              <td height="20">
-                <a href="2326_Silverlign_10_18_07/index.html" target="_blank" class="ListLeft">2326_Silverlign_10_18_07</a>
-              </td>
-            </tr>
-            <tr>
-              <td height="20">
-                <a href="2313_Silverlign_9_27_07/index.html" target="_blank" class="ListLeft">2313_Silverlign_9_27_07</a>
-              </td>
-            </tr>
-            <tr>
-              <td height="20">
-                <a href="2301_SIlverlign_9_18_07/index.html" target="_blank" class="ListLeft">2301_SIlverlign_9_18_07</a>
-              </td>
-            </tr>
-            <tr>
-              <td height="20">
-                <a href="2294_Silverlign_8_15_07/index.html" target="_blank" class="ListLeft">2294_Silverlign_8_15_07</a>
-              </td>
-            </tr>
-            <tr height="20">
-              <td height="20">
-                <a href="2378_SilverlignGallery/index.html" target="_blank" class="ListLeft">2378 Silverlign Fall 08</a>
-              </td>
-            </tr>
-            <tr height="20">
-              <td height="20">
-                <a href="2381_Silverlign_06_02_08/index.html" target="_blank" class="ListLeft">2378 Silverlign Model Shots</a>
-              </td>
-            </tr>
+            <% end %>
           </table>
         </td>
         <td width="600" valign="top">

@@ -10,8 +10,8 @@ describe Gallery::Generator do
       :current_job => {
         :date => "7-31-08",
         :number => 2392,
-        :href => "#"
-      },
+        :href => "http://moose.com"
+      },      
       :archives => [
         {
           :date => "5-30-08",
@@ -22,7 +22,12 @@ describe Gallery::Generator do
           :date => "3-15-08",
           :number => 2390,
           :href => "#"          
-        }        
+        },
+        {
+          :date => "3-01-08",
+          :number => 2388,
+          :href => "#"          
+        }
       ]
     })
   end

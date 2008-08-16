@@ -45,13 +45,13 @@ describe Gallery::Generator do
   end
   
   describe "#recipe" do
-    xit "returns a recipe based on the target directory" do
+    it "returns a recipe based on the target directory" do
       generator.recipe.should == {
         :archives => [
           {
-            :date => "10/04/2008",
-            :number => "2390",
-            :href => "2390_Silverlign_2008_04_10"
+            :date => "07/31/2008",
+            :number => "2392",
+            :href => "2392_Silverlign_2008_07_31"
           },
           {
             :date => "06/15/2008",
@@ -59,9 +59,9 @@ describe Gallery::Generator do
             :href => "2391_Silverlign_2008_06_15"
           },
           {
-            :date => "07/31/2008",
-            :number => "2392",
-            :href => "2392_Silverlign_2008_07_31"
+            :date => "04/10/2008",
+            :number => "2390",
+            :href => "2390_Silverlign_2008_04_10"
           }
         ]
       }

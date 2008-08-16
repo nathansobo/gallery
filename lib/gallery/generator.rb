@@ -20,8 +20,7 @@ module Gallery
     
     def recipe
       jobs = []
-      Dir.foreach(@path) do |subdir|
-        
+      Dir.foreach(@path) do |subdir|  
         match = subdir.match(/^([0-9]+)_([^_]+)_(.+)/)    
         next unless match
         
@@ -30,16 +29,19 @@ module Gallery
         date = match[3]
         
         jobs.push({
-          :date => format_date(parse_date(date)),
+          :date => parse_date(date),
           :number => number,
           :href => subdir
         })
       end
       
-      
+      sorted_jobs = jobs.sort_by {|job| job[:date]}.reverse
+      sorted_jobs.each do |job|
+        job[:date] = format_date(job[:date])
+      end
       
       {
-        :archives => jobs
+        :archives => sorted_jobs
       }
     end
     

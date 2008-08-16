@@ -45,21 +45,21 @@ describe Gallery::Generator do
   end
   
   describe "#recipe" do
-    it "returns a recipe based on the target directory" do
+    xit "returns a recipe based on the target directory" do
       generator.recipe.should == {
         :archives => [
           {
-            :date => "2008_04_10",
+            :date => "10/04/2008",
             :number => "2390",
             :href => "2390_Silverlign_2008_04_10"
           },
           {
-            :date => "2008_06_15",
+            :date => "06/15/2008",
             :number => "2391",
             :href => "2391_Silverlign_2008_06_15"
           },
           {
-            :date => "2008_07_31",
+            :date => "07/31/2008",
             :number => "2392",
             :href => "2392_Silverlign_2008_07_31"
           }
@@ -67,7 +67,10 @@ describe Gallery::Generator do
       }
     end
     
-    
+    describe "#format_date" do
+      it "converts an ugly date to a pretty one" do
+        generator.format_date(generator.parse_date('2008_04_10')).should == '04/10/2008'
+      end
+    end
   end
-  
 end

@@ -29,17 +29,33 @@ module Gallery
         name = match[2]
         date = match[3]
         
-        
         jobs.push({
-          :date => date,
+          :date => format_date(parse_date(date)),
           :number => number,
           :href => subdir
         })
       end
       
+      
+      
       {
         :archives => jobs
       }
     end
+    
+    def parse_date(raw_date)
+      pieces = raw_date.split('_')
+      year = pieces[0].to_i
+      month = pieces[1].to_i
+      day = pieces[2].to_i
+      Time.utc(year, month, day)
+    end
+    
+    def format_date(date)
+      date.strftime("%m/%d/%Y")
+    end
+    
+    
+    
   end
 end

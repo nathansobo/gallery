@@ -6,17 +6,11 @@ module Gallery
       @path = path
     end
     
-    def generate(recipe)
+    def generate
       dir = File.dirname(__FILE__)      
       template = ERB.new(File.read("#{dir}/client_index.erb"))
       template.result(binding)
     end
-    
-    
-    
-
-
-
     
     def recipe
       jobs = []
